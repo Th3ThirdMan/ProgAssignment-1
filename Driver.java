@@ -52,7 +52,9 @@ public class Driver {
                     int hpTerm = input.nextInt();
 
                     double hpMonthly = carPurchaserHelper.calculateHP(hpPrice, hpDeposit, hpInterest, hpTerm);
-                    System.out.println("Monthly HP payment: €" + hpMonthly);
+                    // Format to 2 decimal places
+                    System.out.println("Monthly HP payment: €" + String.format("%.2f", hpMonthly));
+                    System.out.println();
                 }
         
             // If user chooses PCP
@@ -74,7 +76,9 @@ public class Driver {
                     double gmfvPercent = input.nextDouble();
 
                     double pcpMonthly = carPurchaserHelper.pcpResultMonth(pcpPrice, pcpDeposit, pcpInterest, pcpTerm, gmfvPercent);
-                    System.out.println("Monthly PCP payment: €" + pcpMonthly);
+                    // Format to 2 decimal places
+                    System.out.println("Monthly PCP payment: €" + String.format("%.2f", pcpMonthly));
+                    System.out.println();
                 }
             //Ask user to enter all the information required for
             //calculation and call the appropriate method
@@ -93,7 +97,9 @@ public class Driver {
                     int months = input.nextInt();
 
                     double monthlyCost = carPurchaserHelper.calculateMonthlyCost(price, months);
-                    System.out.println("Estimated Monthly Cost: €" + monthlyCost);
+                    // Format to 2 decimal places
+                    System.out.println("Estimated Monthly Cost: €" + String.format("%.2f", monthlyCost));
+                    System.out.println();
                 }
 
                 // Calculate Cost of Fuel
@@ -104,7 +110,9 @@ public class Driver {
                     System.out.print("Enter cost of fuel per litre: ");
                     double costOfFuel = input.nextDouble();
                     double estimatedFuelCost = carPurchaserHelper.fuelCostEstimator(kmsPerWeek, costOfFuel);
-                    System.out.println("Estimated Monthly Fuel Cost: €" + estimatedFuelCost);   
+                    // Format to 2 decimal places
+                    System.out.println("Estimated Monthly Fuel Cost: €" + String.format("%.2f", estimatedFuelCost));
+                    System.out.println();  
                 }
 
             // Car Type Recommendation
@@ -120,7 +128,7 @@ public class Driver {
             // Goodbye Message
 
                 else if (choice == 0) {
-                    System.out.println("Thank you for using the Car Purchaser Helper. Goodbye!");
+                    System.out.println("Thank you for using the Car Purchaser Helper. Hope you have a great day!");
             }
 
             // Catch Invalid Choice
