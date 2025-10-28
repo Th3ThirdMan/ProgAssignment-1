@@ -16,14 +16,20 @@ public class Driver {
         System.out.println(carPurchaserHelper.printWelcomeMessage());
         
         int choice = -1; // Initialize to non-zero value, LCV to avoid infinite loop
+
+        final String RESET = "\u001B[0m";
+        final String CYAN = "\u001B[36m";
+
             while (choice != 0) {
-                System.out.println("***** Car Finance Menu *****\n");
-                System.out.println("Select Option 1 to Calculate HP");
-                System.out.println("Select Option 2 to Calculate PCP");
-                System.out.println("Select Option 3 to Calculate Monthly Cost");
-                System.out.println("Select Option 4 to Calculate Projected Fuel Cost");
-                System.out.println("Select Option 5 to Calculate Car Type Recommendation");
-                System.out.println("Select Option 0 to Exit\n");
+                System.out.println(CYAN + "\n************************" + RESET);
+                System.out.println("🚘 Car Finance Menu 🚘");
+                System.out.println(CYAN + "************************" + RESET);
+                System.out.println("Select Option 1 to Calculate HP 💶");
+                System.out.println("Select Option 2 to Calculate PCP 💸");
+                System.out.println("Select Option 3 to Calculate Monthly Cost 💰");
+                System.out.println("Select Option 4 to Calculate Projected Fuel Cost ⛽");
+                System.out.println("Select Option 5 to Calculate Car Type Recommendation 🚙");
+                System.out.println("Select Option 0 to Exit ❌\n");
                 System.out.print("Enter your choice: ");
 
             // Check if a Number is entered for Menu Choice   
@@ -118,11 +124,13 @@ public class Driver {
             // Car Type Recommendation
 
                 else if (choice == 5) {
-                    System.out.print("Enter your lifestyle requirement (family, commute, adventure, luxury, eco): ");
+                    System.out.print("Based on lifestyle choice, please choose one of the following: Family, Commute, Adventure, Luxury, Eco or Unsure: ");
                     String lifestyle = input.nextLine();
 
                     String recommendation = carPurchaserHelper.recommendCarType(lifestyle);
+                    System.out.println();
                     System.out.println(recommendation);
+                    System.out.println();
                 }
 
             // Goodbye Message
