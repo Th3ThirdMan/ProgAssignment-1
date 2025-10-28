@@ -1,5 +1,3 @@
-import org.w3c.dom.ls.LSOutput; // Will Remove in next push, as not used.
-
 import java.util.Scanner;
 
 public class Driver {
@@ -27,6 +25,13 @@ public class Driver {
                 System.out.println("Select Option 5 to Calculate Car Type Recommendation");
                 System.out.println("Select Option 0 to Exit\n");
                 System.out.print("Enter your choice: ");
+
+            // Check if a Number is entered for Menu Choice   
+                if(!input.hasNextInt()) {
+                    System.out.println("Invalid Entry! Please enter a number from 0-5");
+                    input.nextLine();
+                    continue;
+                }
 
             // Read user choice
             choice = input.nextInt();
@@ -122,9 +127,8 @@ public class Driver {
                 else {
                     System.out.println("Invalid choice, please try again.");
             }
-
-                input.close();
             }
+            input.close();
         }
     }
 
