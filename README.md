@@ -17,26 +17,31 @@ How to run the program
 * A run button runs the code.
 * It reveals a welcome message and a menu with choices from 0-5.
 * The choices request a user to calculate financial products and related costs: Hire Purchase, PCP, Monthly Costs, Projected Fuel Costs, and Car Type Recommendation.
-* There is also a choice to exit the program.
+* When a number is selected, the logic assigned to that individual number requests a user to enter financial details.
+* There is also a choice to exit the program with a goodbye message.
 
 
 
 Known bugs/problems:
 ====================
 
+* Oversight on entering a non-numerical entry to the menu portion. Required to write an if statement after the menu, if(!input.hasNextInt()) to see if a number was entered.
+* Entered input.close() within the last else block of the Invalid Choice output statement. The error was an IllegalStateException so this needed to be moved outside the loop, so it wouldn't close the original input (System.In) prematurely.
+* input.nextLine() required to clear the buffer post-choice entered after choice = input.NextInt().
 
 
 
 Extra Inclusions:
 ====================
 
-Formatting monetary outputs to two decimal places using String.format
+* Formatting monetary outputs to two decimal places using String.format
+* Installed Prettier for indentation purposes on VSC.
 
 
 Considerations:
 ====================
 
-Re-writing logic for a deposit amount that could exceed the cost.
+* Re-writing logic to prevent a deposit amount that could exceed the cost amount.
 
 
 Resources & References:
