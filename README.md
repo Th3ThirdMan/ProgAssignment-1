@@ -1,30 +1,51 @@
 
-Name : 
-Student Number:
+Name: David Kennedy 
+Student Number: W20119128
 
-Brief description of piece (1 or 2 sentences MAX):
+Description of Project:
 ===================================================
 
-
+This project is a console-based Car Purchasing Assistant, written in Java. It employs a menu-style interface to calculate various car financing options such as Hire Purchase and Personal Contract Plans. It also allows the user to estimate monthly costs, fuel expenses, and offers car type-recommendations based on lifestyle. The project implements logic that deals with input validation, formatted output, and the use of emojis for a more colourful and user-friendly experience.
 
 
 Instructions:
 =============
 
-How to run the program and state how to use any features of it
+How to run the program
+* Open the project PROGASSIGNMENT-1 in an editor of choice.
+* The project contains 2 files, CarPurchaserHelper.java and Driver.java.
+* A run button runs the code.
+* It reveals a welcome message and a menu with choices from 0-5.
+* The choices request a user to calculate financial products and related costs: Hire Purchase, PCP, Monthly Costs, Projected Fuel Costs, and Car Type Recommendation.
+* There is also a choice to exit the program.
+
 
 
 Known bugs/problems:
 ====================
 
-Any sources referred to during the development of the assignment.
-You don't need to reference lecture/lab materials.
-**You do need to specify precisely any other sources**.
 
-i.e. W3Schools is too generic. You need to be more specific 
 
-e.g. https://www.w3schools.com/java/java_class_methods.asp 
-     or a page number from a book etc.
 
-Failure to fully  reference such material used may result in plagiarism process being brought into play. 
+Extra Inclusions:
+====================
+
+Formatting monetary outputs to two decimal places using String.format
+
+
+Considerations:
+====================
+
+Re-writing logic for a deposit amount that could exceed the cost.
+
+
+Resources & References:
+====================
+
+https://www.geeksforgeeks.org/java/how-to-print-colored-text-in-java-console/
+
+https://emojipedia.org/
+
+https://medium.com/@fulton_shaun/brighten-up-your-terminal-with-ansi-codes-cb5f5d2ff085
+
 
