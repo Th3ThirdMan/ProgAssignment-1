@@ -36,12 +36,15 @@ Extra Inclusions:
 
 * Formatting monetary outputs to two decimal places using String.format
 * Installed Prettier for indentation purposes on VSC.
+* Added the use of emojis to benefit the project visually.
+* Investigated the use of ANSI codes to give a vibrancy to the console output. 
 
 
 Considerations:
 ====================
 
 * Re-writing logic to prevent a deposit amount that could exceed the cost amount.
+* Could include further code to calculate APR on monthly costs.
 
 
 Resources & References:
