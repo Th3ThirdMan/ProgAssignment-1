@@ -1,24 +1,28 @@
+
+// Import Scanner for User Input
 import java.util.Scanner;
 
-public class Driver {
+public class Driver { // Initializing Blueprint Class
     public static void main(String[] args) {
-        new Driver();
+        new Driver(); // New Object of Driver Class
     }
 
-    public Driver() {
+    public Driver() { // Menu Logic in Constructor
         Scanner input = new Scanner(System.in);
 
         // Creates a CarPurchaseHelper Object
         CarPurchaserHelper carPurchaserHelper = new CarPurchaserHelper();
 
-        // Call welcome message
+        // Calls Welcome message
         System.out.println(carPurchaserHelper.printWelcomeMessage());
 
-        int choice = -1; // Initialize to non-zero value, LCV to avoid infinite loop
+        // Initialize to non-zero value, LCV to avoid infinite loop
+        int choice = -1;
 
         final String RESET = "\u001B[0m"; // ANSI Code to reset colour
         final String CYAN = "\u001B[36m"; // ANSI Code to include Cyan colour
 
+        // Menu Options Loop
         while (choice != 0) {
             System.out.println(CYAN + "\n************************" + RESET);
             System.out.println("🚘 Car Finance Menu 🚘");
@@ -39,13 +43,9 @@ public class Driver {
             }
 
             // Read user choice
-            choice = input.nextInt();
-            // Needed for Car Type Recommendation to consume the newline
-            // User enters choice
+            choice = input.nextInt(); // Required to consume the newline, then user enters choice.
 
-            // If user chooses HP
-            // --- HP Calculation ---
-            // Prints Menu
+            // If user chooses Option 1, HP Calculation.
             if (choice == 1) {
                 System.out.print("Enter car price: ");
                 double hpPrice = input.nextDouble();
@@ -57,13 +57,13 @@ public class Driver {
                 int hpTerm = input.nextInt();
 
                 double hpMonthly = carPurchaserHelper.calculateHP(hpPrice, hpDeposit, hpInterest, hpTerm);
-                // Format to 2 decimal places
+
+                // HP Monthly Payment formatted to 2 decimal places
                 System.out.println("Monthly HP payment: €" + String.format("%.2f", hpMonthly));
                 System.out.println();
             }
 
-            // If user chooses PCP
-            // --- PCP Calculation ---
+            // If user chooses Option 2, PCP Calculation.
             else if (choice == 2) {
                 System.out.print("Enter car price: ");
                 double pcpPrice = input.nextDouble();
@@ -82,18 +82,13 @@ public class Driver {
 
                 double pcpMonthly = carPurchaserHelper.pcpResultMonth(pcpPrice, pcpDeposit, pcpInterest, pcpTerm,
                         gmfvPercent);
-                // Format to 2 decimal places
+
+                // PCP Monthly Payment formatted to 2 decimal places
                 System.out.println("Monthly PCP payment: €" + String.format("%.2f", pcpMonthly));
                 System.out.println();
             }
-            // Ask user to enter all the information required for
-            // calculation and call the appropriate method
 
-            // Add in remaining choices for the methods you have written
-            // in the CarPurchaseHelper class
-
-            // Calculate Monthly Cost
-
+            // If user chooses Option 3, Calculate Monthly Cost.
             else if (choice == 3) {
                 System.out.print("Enter car price: ");
                 double price = input.nextDouble();
@@ -102,26 +97,26 @@ public class Driver {
                 int months = input.nextInt();
 
                 double monthlyCost = carPurchaserHelper.calculateMonthlyCost(price, months);
-                // Format to 2 decimal places
+
+                // Monthly cost formatted to 2 decimal places
                 System.out.println("Estimated Monthly Cost: €" + String.format("%.2f", monthlyCost));
                 System.out.println();
             }
 
-            // Calculate Cost of Fuel
-
+            // If user chooses Option 4, Calculate Cost of Fuel
             else if (choice == 4) {
                 System.out.print("Enter kilometres per week: ");
                 double kmsPerWeek = input.nextDouble();
                 System.out.print("Enter cost of fuel per litre: ");
                 double costOfFuel = input.nextDouble();
                 double estimatedFuelCost = carPurchaserHelper.fuelCostEstimator(kmsPerWeek, costOfFuel);
-                // Format to 2 decimal places
+
+                // Fuel cost formatted to 2 decimal places
                 System.out.println("Estimated Monthly Fuel Cost: €" + String.format("%.2f", estimatedFuelCost));
                 System.out.println();
             }
 
-            // Car Type Recommendation
-
+            // If user chooses Option 5, Car Type Recommendation
             else if (choice == 5) {
                 input.nextLine(); // Consume from previous nextInt()
                 System.out.print(
@@ -135,7 +130,6 @@ public class Driver {
             }
 
             // Goodbye Message
-
             else if (choice == 0) {
                 System.out.println("Thank you for using the Car Purchaser Helper. Hope you have a great day!");
             }
