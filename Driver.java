@@ -2,7 +2,8 @@
 // Import Scanner for User Input
 import java.util.Scanner;
 
-public class Driver { // Initializing Blueprint Class
+// Initializing Blueprint Class
+public class Driver {
     public static void main(String[] args) {
         new Driver(); // New Object of Driver Class
     }
@@ -19,12 +20,12 @@ public class Driver { // Initializing Blueprint Class
         // Initialize to non-zero value, LCV to avoid infinite loop
         int choice = -1;
 
-        final String RESET = "\u001B[0m"; // ANSI Code to reset colour
         final String CYAN = "\u001B[36m"; // ANSI Code to include Cyan colour
+        final String RESET = "\u001B[0m"; // ANSI Code to reset colour
 
         // Menu Options Loop
         while (choice != 0) {
-            System.out.println(CYAN + "\n************************" + RESET);
+            System.out.println(CYAN + "\n************************" + RESET); // Prints Cyan Asterisks and Resets
             System.out.println("🚘 Car Finance Menu 🚘");
             System.out.println(CYAN + "************************" + RESET);
             System.out.println("Select Option 1 to Calculate HP 💶");
@@ -59,8 +60,11 @@ public class Driver { // Initializing Blueprint Class
                 double hpMonthly = carPurchaserHelper.calculateHP(hpPrice, hpDeposit, hpInterest, hpTerm);
 
                 // HP Monthly Payment formatted to 2 decimal places
-                System.out.println("Monthly HP payment: €" + String.format("%.2f", hpMonthly));
                 System.out.println();
+                String message = "Your Monthly HP payment is: €" + String.format("%.2f", hpMonthly);
+                System.out.println(message);
+                // Underlines the length of the HP Payment String
+                System.out.println("=".repeat(message.length()));
             }
 
             // If user chooses Option 2, PCP Calculation.
@@ -84,8 +88,11 @@ public class Driver { // Initializing Blueprint Class
                         gmfvPercent);
 
                 // PCP Monthly Payment formatted to 2 decimal places
-                System.out.println("Monthly PCP payment: €" + String.format("%.2f", pcpMonthly));
                 System.out.println();
+                String pcpMessage = "Your Monthly PCP payment is: €" + String.format("%.2f", pcpMonthly);
+                System.out.println(pcpMessage);
+                // Underlines the length of the PCP Payment String
+                System.out.println("=".repeat(pcpMessage.length()));
             }
 
             // If user chooses Option 3, Calculate Monthly Cost.
@@ -99,8 +106,11 @@ public class Driver { // Initializing Blueprint Class
                 double monthlyCost = carPurchaserHelper.calculateMonthlyCost(price, months);
 
                 // Monthly cost formatted to 2 decimal places
-                System.out.println("Estimated Monthly Cost: €" + String.format("%.2f", monthlyCost));
                 System.out.println();
+                String monthCost = "Your Estimated Monthly Cost is: €" + String.format("%.2f", monthlyCost);
+                System.out.println(monthCost);
+                // Underlines the length of the Monthly Cost String
+                System.out.println("=".repeat(monthCost.length()));
             }
 
             // If user chooses Option 4, Calculate Cost of Fuel
@@ -112,8 +122,11 @@ public class Driver { // Initializing Blueprint Class
                 double estimatedFuelCost = carPurchaserHelper.fuelCostEstimator(kmsPerWeek, costOfFuel);
 
                 // Fuel cost formatted to 2 decimal places
-                System.out.println("Estimated Monthly Fuel Cost: €" + String.format("%.2f", estimatedFuelCost));
                 System.out.println();
+                String fuelCost = "Your Estimated Monthly Fuel Cost is: €" + String.format("%.2f", estimatedFuelCost);
+                System.out.println(fuelCost);
+                // Underlines the length of the Fuel Cost String
+                System.out.println("=".repeat(fuelCost.length()));
             }
 
             // If user chooses Option 5, Car Type Recommendation
@@ -126,7 +139,8 @@ public class Driver { // Initializing Blueprint Class
                 String recommendation = carPurchaserHelper.recommendCarType(lifestyle);
                 System.out.println();
                 System.out.println(recommendation);
-                System.out.println();
+                // Underlines the length of the recommended String
+                System.out.println("=".repeat(recommendation.length()));
             }
 
             // Goodbye Message
@@ -135,6 +149,7 @@ public class Driver { // Initializing Blueprint Class
             }
 
             // Catch Invalid Choice
+            // If User enters an empty string, a non-number, or a number outside 0-5
             else {
                 System.out.println("Invalid choice, please try again.");
             }
