@@ -25,6 +25,7 @@ public class Driver {
 
         // Menu Options Loop
         while (choice != 0) {
+
             System.out.println(CYAN + "\n************************" + RESET); // Prints Cyan Asterisks and Resets
             System.out.println("🚘 Car Finance Menu 🚘");
             System.out.println(CYAN + "************************" + RESET);
@@ -45,6 +46,7 @@ public class Driver {
 
             // Read user choice
             choice = input.nextInt(); // Required to consume the newline, then user enters choice.
+            input.nextLine(); // consume newline
 
             // If user chooses Option 1, HP Calculation.
             if (choice == 1) {
@@ -131,7 +133,6 @@ public class Driver {
 
             // If user chooses Option 5, Car Type Recommendation
             else if (choice == 5) {
-                input.nextLine(); // Consume from previous nextInt()
                 System.out.print(
                         "Based on lifestyle choice, please choose one of the following: Family, Commute, Adventure, Luxury, Eco or Unsure: ");
                 String lifestyle = input.nextLine();

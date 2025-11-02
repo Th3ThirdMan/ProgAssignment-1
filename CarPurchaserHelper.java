@@ -1,5 +1,5 @@
 public class CarPurchaserHelper {
-    // Explain it in the reflection
+    // Calculates monthly HP
     public double calculateHP(double carPrice, double deposit, double annualInterest, int termYears) {
         double amountToFinance = carPrice - deposit;
         double monthlyInterestRate = (annualInterest / 100) / 12;
@@ -13,12 +13,12 @@ public class CarPurchaserHelper {
                 factor *= (1 + monthlyInterestRate);
             }
 
-            double monthlyPayment = amountToFinance * monthlyInterestRate * factor / (factor - 1);
+            double monthlyPayment = amountToFinance * monthlyInterestRate * factor / (factor - 1); // Annuity formula
             return monthlyPayment;
         }
     }
 
-    // Explain it in the reflection
+    // Calculates monthly PCP
     public double pcpResultMonth(double carPrice, double deposit, double annualInterest, int termYears,
             double gmfvPercent) {
         double gmfv = carPrice * (gmfvPercent / 100);
@@ -44,28 +44,35 @@ public class CarPurchaserHelper {
         return monthlyPayment;
     }
 
-    // Write a method called printWelcomeMessage() - returns a String
+    // Welcome Message
     public String printWelcomeMessage() {
         return "Welcome to the Car Purchaser Helper!\n";
     }
 
-    // Write a method called printGoodbyeMessage() - returns a String
+    // Goodbye Message
     public String printGoodbyeMessage() {
-        return "Thank you for using the Car Purchaser Helper. Goodbye!";
+        return "Thanks for using Car Purchaser Helper. See you next time!";
     }
 
-    // Write a method called calculateMonthlyCost(double, int) returns a Double
+    // Calculate Monthly Cost
+    // Calculates roughly the monthly payment if the car is paid off over
+    // a number of months.
+    // Parameters : price of car and number of months
     public double calculateMonthlyCost(double carPrice, int months) {
         if (months <= 0) {
             return 0;
         }
         return carPrice / months;
     }
-    // Calculates roughly the monthly payment if the car is paid off over
-    // a number of months.
-    // Parameters : price of car and number of months
 
-    // Write a method called fuelCostEstimator(double, double) returns a double
+    // Calculate Fuel Cost
+    /*
+     * Estimates weekly fuel cost (e.g., assuming 6L per 100 km).
+     * // Parameters : kilometres per week and cost of fuel
+     * // work out litres per week by dividing weekly kms by 100 and mulitplying by
+     * 6,
+     * // then multiply by cost
+     */
     public double fuelCostEstimator(double kmsPerWeek, double costOfFuel) {
         double litresPerWeek = (kmsPerWeek / 100) * 6;
         double weeklyFuelCost = litresPerWeek * costOfFuel;
@@ -75,13 +82,7 @@ public class CarPurchaserHelper {
         return weeklyFuelCost * 4.34; // Approximate weeks per month.
     }
 
-    // Estimates weekly fuel cost (e.g., assuming 6L per 100 km).
-    // Parameters : kilometres per week and cost of fuel
-    // work out litres per week by dividing weekly kms by 100 and mulitplying by 6,
-    // then multiply by cost
-
-    // Write a method called recommendCarType(String) returns a String
-
+    // Recommend Car Type
     // Gives a recommendation based on the user's lifestyle
     // (Parameter : requirement e.g., “family,” “commute,” “adventure”).
     public String recommendCarType(String requirements) {
